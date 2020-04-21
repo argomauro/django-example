@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="it" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>AppTwo: Pagina degli Conti Corrente</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+  <h1>AppTwo: Pagina dei conti corrente caricati da DBMS </h1>
+  {% if conti %}
+  <div>
+    <table>
+      <thead>
+        <th>Utente</th>
+        <th>Nome banca</th>
+        <th>Iban</th>
+      </thead>
+      <tbody>
+        {% for conto in conti %}
+        <tr>
+          <td>{{ conto.utente.nome }}</td>
+          <td>{{ conto.nomeBanca }}</td>
+          <td>{{ conto.iban }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+
+    </table>
+  </div>
+  {% else %}
+  <h2>Nessun elemento in tabella</h2>
+  {% endif %}
+</body>
+
+</html>

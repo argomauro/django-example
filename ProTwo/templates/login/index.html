@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% extends 'login/base.html'%}
+{% load static %}
+
+{%block body_block %}
+<div class="jumbotron">
+  <h1 class="display-4">Django Level five</h1>
+  <p class="lead">
+    <hr class="my-4">
+  </p>
+  <p></p>
+  <p class="lead">
+    {% if user.is_authenticated %}
+  <h1>Benvenuto <span class="badge badge-secondary"> {{ user.username }}</span></h1>
+  {% else %}
+  <h1>Prima di accedere alle funzioni del portale <span class="badge badge-secondary"> Effettua il Login</span></h1>
+  {% endif %}
+  </p>
+</div>
+{% endblock %}

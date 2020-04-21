@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Form dal modello Utente</title>
+</head>
+
+<body>
+  <h2>Inserisci i dati dell'utente</h2>
+  <form method="post">
+    {{ form }}
+    {% csrf_token %}
+    <input type="submit" name="Submit" value="Submit">
+  </form>
+
+</body>
+
+</html>
